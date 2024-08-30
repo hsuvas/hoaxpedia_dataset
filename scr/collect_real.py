@@ -1,3 +1,8 @@
+"""
+Function Call: python collect_real.py --data_path ../data/hoax_unified_v4.csv --output_path ../data
+
+"""
+
 import pandas as pd
 from utils import get_revision_timestamps, clean_wiki_article, remove_old_revision, remove_current_revision, add_space_after_full_stop
 import argparse

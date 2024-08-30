@@ -1,3 +1,13 @@
+"""
+Function Call: python classifier.py --input_train_path ../data/INPUT_TRAIN_PATH.csv 
+                                    --input_test_path ../data/INPUT_TEST.csv 
+                                    --output_path ../data 
+                                    --task definition 
+                                    --huggingface_key <key> 
+                                    --repo_id <repo_id>
+"""
+
+
 import torch
 import transformers
 from transformers import AutoTokenizer,AutoModel,AutoModelForSequenceClassification, AutoModelForMaskedLM,DefaultDataCollator,Trainer,TrainingArguments,DataCollatorWithPadding,DataCollatorForTokenClassification
