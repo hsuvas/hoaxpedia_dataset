@@ -1,22 +1,34 @@
 # Hoaxpedia: A Unified Wikipedia Hoax Articles Dataset
-_TL:DR: Hoaxpedia is a Dataset containing Hoax articles collected from Wikipedia and semantically similar Legitimate article in 2 settings: Fulltext and Definition and in 3 splits based on Hoax:Legit ratio (1:2,1:10,1:100)._
+_TL:DR: Hoaxpedia is a Dataset containing Hoax articles collected from Wikipedia and semantically similar Legitimate article in 2 settings: Fulltext and Definition and in 3 splits based on Hoax:Legit ratio._
 
 We introduce HOAXPEDIA, a collection of 311 hoax articles (from existing literature and official Wikipedia lists), together with semantically similar legitimate articles, which together form a binary text classification dataset aimed at fostering research in automated hoax detection.
 
 
 ## Dataset Description
 
+The Hoaxpedia dataset is a collection of 311 hoax articles, sourced from existing literature and official Wikipedia lists. Each hoax article is paired with a semantically similar legitimate article, creating a binary text classification dataset. The dataset is designed to facilitate research in automated hoax detection.
+
+The dataset is available in two settings: Fulltext and Definition. It is also divided into three splits based on the Hoax:Legit ratio, with ratios of 1:2, 1:10, and 1:100.
+
+![Dataset Description with the splits](dataset_description.png)
 
 ### Calling the dataset
+
+To access the dataset, you can use the following code snippet in Python:
 
 ```python
 from datasets import load_dataset
 dataset = load_dataset('hsuvaskakoty/hoaxpedia','datasetSetting_datasetSplit')
 ```
 
-## Functin to extract the Legitimate articles from the dataset
+Remember to replace `'datasetSetting_datasetSplit'` with the specific split you want to load. Here are the available splits:
 
-We extract the Legitimate articles from the dataset by calling the following function:
+- Setting: Fulltext, Definition
+- Split: 1h2r, 1h10r, 1h100r
+
+## Function to extract the Legitimate articles from the dataset
+
+By default, the dataset comes with n number of real articles. However, we can also extract the Legitimate articles from the dataset by calling the following function:
 
 ```python
 python collect_real.py  --data_path ../data/hoax_unified_v4.csv 
